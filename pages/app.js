@@ -1,7 +1,7 @@
 function LanguageToggle() {
     const path = window.location.pathname;
-    const isEnglish = path.includes("/en/");
-    const href = isEnglish ? "../pt/" : "../en/";
+    const isEnglish = path.includes("/en-us/");
+    const href = isEnglish ? "../pt-br/" : "../en-us/";
     const label = isEnglish ? "Português" : "English";
 
     return (

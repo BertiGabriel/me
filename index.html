@@ -4,9 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabriel Berti</title>
-  <meta http-equiv="refresh" content="0; url=pt/" />
+  <script>
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang && (lang.toLowerCase().startsWith('pt-pt') || lang.toLowerCase().startsWith('pt-br'))) {
+      window.location.href = 'pt-br/';
+    } else {
+      window.location.href = 'en-us/';
+    }
+  </script>
 </head>
 <body>
-  <p>Redirecting to <a href="pt/">Português</a>...</p>
+  <p>If you are not redirected, click <a href="en-us/">English</a> or <a href="pt-br/">Português</a>.</p>
 </body>
 </html>
