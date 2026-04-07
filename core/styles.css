@@ -3,16 +3,17 @@
     --bg: #ffffff;
     --text: #000000;
     --muted: #000000;
-    --accent: #0ea5e9;
-    --accent-strong: #0284c7;
-    --surface: rgba(255, 255, 255, 0.95);
-    --surface-soft: rgba(248, 250, 252, 0.92);
-    --border: rgba(15, 23, 42, 0.08);
-    --shadow: 0 30px 90px -36px rgba(15, 23, 42, 0.08);
+    --border: #000000;
+    --surface: rgba(255, 255, 255, 0.92);
+    --shadow: 0 24px 80px -48px rgba(0, 0, 0, 0.18);
 }
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -37,19 +38,28 @@ a:hover {
     color: #000000 !important;
 }
 
-.glass-card {
-    border-color: var(--border);
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(24px);
+section {
+    padding: 4rem 0;
 }
 
-.glass-panel {
-    border-color: var(--border);
-    background-color: var(--surface-soft);
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.card-outline {
+    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
 }
 
 ::selection {
-    background: rgba(14, 165, 233, 0.2);
-    color: #0f172a;
+    background: rgba(0, 0, 0, 0.08);
+    color: #000000;
 }

@@ -8,18 +8,20 @@ function SectionHeader({ overline, title, description }) {
     );
 }
 
-function Card({ title, description, action, href, badge, meta }) {
+function Card({ title, description, action, href, badge, meta, icon }) {
     return (
-        <article className="rounded-[32px] border border-black bg-transparent p-8 shadow-[0_40px_120px_-70px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 glass-card">
-            <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-black">{title}</h3>
+        <article className="rounded-[32px] border border-black bg-transparent p-8 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.18)] transition hover:-translate-y-1 flex flex-col h-full">
+            <div className="space-y-4 flex-grow">
+                <h3 className="text-xl font-semibold text-black flex items-center gap-2">
+                    {icon && <span dangerouslySetInnerHTML={{__html: icon}}></span>}
+                    {title}
+                </h3>
                 <p className="text-black">{description}</p>
             </div>
-            <div className="mt-8 flex items-center justify-between gap-3">
-                <a href={href} className="text-black font-semibold hover:text-slate-700">
+            <div className="mt-8">
+                <a href={href} className="inline-flex items-center justify-center rounded-full border border-black bg-transparent px-4 py-2 text-sm font-semibold text-black transition hover:bg-black/5">
                     {action || "Abrir"}
                 </a>
-                <span className="rounded-full border border-black bg-transparent px-3 py-1 text-sm text-black">{badge || meta || ""}</span>
             </div>
         </article>
     );
