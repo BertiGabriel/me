@@ -1,11 +1,22 @@
 :root {
-    color-scheme: light;
+    color-scheme: light dark;
     --bg: #ffffff;
     --text: #000000;
-    --muted: #000000;
+    --muted: #666666;
     --border: #000000;
     --surface: rgba(255, 255, 255, 0.92);
     --shadow: 0 24px 80px -48px rgba(0, 0, 0, 0.18);
+    --accent: #2563eb;
+}
+
+[data-theme="dark"] {
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --muted: #a1a1a1;
+    --border: #ffffff;
+    --surface: rgba(10, 10, 10, 0.92);
+    --shadow: 0 24px 80px -48px rgba(0, 0, 0, 0.5);
+    --accent: #60a5fa;
 }
 
 * {
@@ -22,20 +33,16 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-body,
-body * {
-    color: #000000 !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-    color: inherit;
+    color: var(--text);
     text-decoration: none;
 }
 
 a:hover {
-    color: #000000 !important;
+    color: var(--accent);
 }
 
 section {
@@ -48,18 +55,52 @@ img {
 }
 
 .card-outline {
-    border: 1px solid #000;
-    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid var(--border);
+    background: var(--surface);
     box-shadow: var(--shadow);
 }
 
 .btn-outline {
-    border: 1px solid #000;
+    border: 1px solid var(--border);
     background: transparent;
-    color: #000;
+    color: var(--text);
 }
 
 ::selection {
-    background: rgba(0, 0, 0, 0.08);
-    color: #000000;
+    background: rgba(128, 128, 128, 0.2);
+    color: var(--text);
+}
+
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--surface);
 }
